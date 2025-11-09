@@ -18,6 +18,14 @@ config/icon="res://icon.svg"
 
 project/assembly_name="2.5D Top Down Demo"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/daicon/plugin.cfg")
+
+[physics]
+
+3d/physics_engine="Rapier3D"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

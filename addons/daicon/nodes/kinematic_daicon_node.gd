@@ -85,6 +85,7 @@ var shader_cast : RayCast3D
 		else:
 			mesh_properties = {}
 	get():
+		if not d3: return
 		if not mesh_properties: return
 		return d3.get_node(str(mesh_properties.Name))
 ## Shape or Polygon 3D.
@@ -140,6 +141,7 @@ var shader_cast : RayCast3D
 			shape_properties = {}
 	get():
 		if not shape_properties: return
+		if not d3: return
 		return d3.get_node(str(shape_properties.Name))
 
 @export_group("Mesh & Shape")
