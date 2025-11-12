@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://d1sgg3bial5f7"]
+[gd_scene load_steps=76 format=3 uid="uid://8ih8lungh28r"]
 
 [ext_resource type="Script" uid="uid://bkps2wyjjdms5" path="res://example/code/player.gd" id="1_rxg4x"]
 [ext_resource type="Texture2D" uid="uid://bkmdbgjeriqpb" path="res://example/assets/basic.png" id="2_rxg4x"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://sxebibd2n2di" path="res://example/assets/shadow.png" id="3_43feq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_43feq"]
+size = Vector3(0.9, 0.9, 0.9)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ptnvh"]
+size = Vector3(0.9, 0.9, 0.9)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_43feq"]
 size = Vector3(0.9, 0.9, 0.9)
@@ -756,15 +758,13 @@ size = Vector3(1, 0, 1)
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("mesh", "shape", "whisker_shape")]
 z_index = 1
 y_sort_enabled = true
-texture_filter = 1
 script = ExtResource("1_rxg4x")
 tile_size = 16
 mesh = NodePath("KinematicBody3D/Mesh")
 shape = NodePath("KinematicBody3D/Shape")
 current_mesh = SubResource("BoxMesh_43feq")
 current_shape = SubResource("BoxShape3D_ptnvh")
-mesh_and_shape_position = Vector3(0, 0.5, 0)
-mesh_and_shape_scale = Vector3(0.9, 1.9, 0.9)
+mesh_and_shape_position = Vector3(0, -0.06, 0)
 child_count = 4
 mesh_properties = {
 "Basis": Basis(1, 0, 0, 0, 1, 0, 0, 0, 1),
@@ -780,12 +780,12 @@ mesh_properties = {
 "MaterialOverride": null,
 "Mesh": SubResource("BoxMesh_43feq"),
 "Name": &"Mesh",
-"Position": Vector3(0, 0.5, 0),
+"Position": Vector3(0, -0.06, 0),
 "Quaternion": Quaternion(0, 0, 0, 1),
 "Rotation": Vector3(0, 0, 0),
 "RotationEditMode": 0,
 "RotationOrder": 2,
-"Scale": Vector3(0.9, 1.9, 0.9),
+"Scale": Vector3(1, 1, 1),
 "Skeleton": NodePath(".."),
 "Skin": null,
 "SortingOffset": 0.0,
@@ -802,12 +802,12 @@ shape_properties = {
 "Basis": Basis(1, 0, 0, 0, 1, 0, 0, 0, 1),
 "Disabled": false,
 "Name": &"Shape",
-"Position": Vector3(0, 0.5, 0),
+"Position": Vector3(0, -0.06, 0),
 "Quaternion": Quaternion(0, 0, 0, 1),
 "Rotation": Vector3(0, 0, 0),
 "RotationEditMode": 0,
 "RotationOrder": 2,
-"Scale": Vector3(0.9, 1.9, 0.9),
+"Scale": Vector3(1, 1, 1),
 "Shape": SubResource("BoxShape3D_ptnvh"),
 "TopLevel": false
 }
@@ -839,6 +839,7 @@ whisker_shape_properties = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("2_rxg4x")
 offset = Vector2(0, -7)
 flip_h = true
@@ -866,6 +867,7 @@ zoom = Vector2(4, 4)
 [node name="DaiconShadow" type="Sprite2D" parent="." node_paths=PackedStringArray("daicon_parent", "shape")]
 show_behind_parent = true
 z_as_relative = false
+texture_filter = 1
 position = Vector2(0, 9)
 texture = ExtResource("3_43feq")
 script = ExtResource("3_7dqni")
